@@ -17,7 +17,7 @@ Il inclut également des **scrapers** qui permettent de mettre à jour automatiq
 ## 2. [Plateforme de prédictions des marchés boursiers](http://zicocharts.pythonanywhere.com/)
 
 
-Ce projet est une plateforme qui utilise des **modèles de réseaux de neurones convolutifs (CNN)** pour prédire le graphique du marché boursier du jour en cours. Les prédictions sont basées sur 10 ans de données historiques.  
+Ce projet est une plateforme qui utilise des **modèles de réseaux de neurones convolutifs (CNN)** pour prédire le graphique du marché boursier du jour en cours. Les prédictions sont basées sur 13 ans de données historiques.  
 La plateforme est également construite avec **HTML/CSS/JS/Bootstrap** pour l'interface utilisateur et **Python/Flask** pour le backend.
 
 ### Fonctionnalités :
