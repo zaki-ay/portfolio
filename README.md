@@ -24,3 +24,12 @@ La plateforme est également construite avec **HTML/CSS/JS/Bootstrap** pour l'in
 - Prédiction du graphique du marché boursier pour la journée en cours.
 - Utilisation de modèles CNN entraînés sur 13 ans de données.
 - Interface simple pour visualiser les résultats de la prédiction.
+
+## 3. Contrôleur de thermostat intelligent | Arduino, C++, NodeMCU	
+
+Ce projet IoT conçu pour automatiser le contrôle d'un thermostat mécanique à l'aide de plusieurs unités NodeMCU, un servomoteur, et des capteurs de température et infrarouge. Le système permet de régler et maintenir une plage de température souhaitée via des requêtes HTTP gérées par un serveur central NodeMCU. Ce projet améliore l'efficacité énergétique tout en modernisant un thermostat existant.
+
+### Fonctionnalités : 
+- Conçu un système automatisé de contrôle de thermostat utilisant plusieurs unités NodeMCU pour optimiser la régulation de la température dans un appartement.
+- Intégré un capteur de température et un capteur infrarouge avec un servomoteur pour un contrôle précis d’un thermostat mécanique, améliorant ainsi l'efficacité énergétique.
+- Mis en place un serveur central NodeMCU pour gérer les requêtes HTTP des unités clientes, permettant un contrôle fluide et une fonction d’ajustement automatique pour la température souhaitée.
