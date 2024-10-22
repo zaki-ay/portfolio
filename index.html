@@ -36,13 +36,21 @@
             height: auto;
             display: none; /* Start hidden */
         }
+        .resume-link {
+            cursor: pointer; 
+            margin: 20px 0; 
+            color: blue;
+        }
+        .resume-image {
+            display: none; 
+            margin: 0 auto;
+            max-width: 100%; 
+        }
     </style>
     <script>
         $(document).ready(function() {
-            // Toggle project images
-            $('.toggle-image').click(function() {
-                const img = $(this).next('.project-image');
-                img.slideToggle(); // Toggle image visibility
+            $(".resume-link").click(function() {
+                $(".resume-image").toggle(); 
             });
         });
     </script>
@@ -51,7 +59,8 @@
 
     <div class="container">
         <h1>Mes projets - Zaki Yahia</h1>
-        <h3><a href="CV_Zaki_Yahia.png">Voir mon CV</a></h3>
+        <h3 class="resume-link">Voir mon CV</h3>
+        <img src="CV_Zaki_Yahia.png" alt="Mon CV" class="resume-image">
         <div class="text-right mb-3">
             <a href="index.html" class="btn btn-primary">Français</a>
             <a href="index_en.html" class="btn btn-primary">English</a>
