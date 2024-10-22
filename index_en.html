@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects - Zaki Yahia</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
@@ -35,14 +35,29 @@
         .resume-link {
             text-align: center;
             margin: 20px 0;
+            cursor: pointer;
+        }
+        .resume-image {
+            display: none; /* Initially hidden */
+            margin: 0 auto;
+            max-width: 100%; /* Make it responsive */
         }
     </style>
+    <script>
+        $(document).ready(function() {
+            $(".resume-link").click(function() {
+                $(".resume-image").toggle(); // Toggle visibility of the resume image
+            });
+        });
+    </script>
 </head>
 <body>
 
     <div class="container">
         <h1>My Projects - Zaki Yahia</h1>
-        <h3 class="resume-link"><a href="example_image_resume.png">View my resume</a></h3>
+        <h3 class="resume-link">View my resume</h3>
+        <img src="example_image_resume.png" alt="My Resume" class="resume-image"> <!-- Updated image link -->
+        
         <div class="text-right mb-3">
             <a href="index.html" class="btn btn-primary">Français</a>
             <a href="index_en.html" class="btn btn-primary">English</a>
