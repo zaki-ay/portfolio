@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes projets - Zaki Yahia</title>
+    <title>Mes Projets - Zaki Yahia</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -18,9 +18,6 @@
             margin-bottom: 20px;
             text-align: center;
         }
-        h3 {
-            text-align: center; /* Center the "Voir mon CV" link */
-        }
         .project-card {
             background-color: #ffffff;
             border: 1px solid #ddd;
@@ -34,17 +31,16 @@
             margin: 20px auto;
             max-width: 100%;
             height: auto;
-            display: none; /* Start hidden */
         }
         .resume-link {
-            cursor: pointer; 
-            margin: 20px 0; 
-            color: blue;
+            text-align: center;
+            margin: 20px 0;
+            cursor: pointer;
         }
         .resume-image {
-            display: none; 
+            display: none; /* Initialement cachée */
             margin: 0 auto;
-            max-width: 100%; 
+            max-width: 100%; /* Rendre responsive */
         }
     </style>
     <script>
@@ -58,9 +54,10 @@
 <body>
 
     <div class="container">
-        <h1>Mes projets - Zaki Yahia</h1>
+        <h1>Mes Projets - Zaki Yahia</h1>
         <h3 class="resume-link">Voir mon CV</h3>
-        <img src="CV_Zaki_Yahia.png" alt="Mon CV" class="resume-image">
+        <img src="example_image_resume.png" alt="Mon CV" class="resume-image"> 
+        
         <div class="text-right mb-3">
             <a href="index.html" class="btn btn-primary">Français</a>
             <a href="index_en.html" class="btn btn-primary">English</a>
@@ -70,45 +67,44 @@
             <h2><a href="http://zicozico.pythonanywhere.com/" target="_blank">1. Générateur d'horaires pour l'UQAM</a></h2>
             <a href="https://github.com/zaki-ay/schedules">Voir sur GitHub</a>
             <p>
-                Ce projet est un site web qui utilise des techniques d'optimisation, notamment le <strong>backtracking</strong>, pour générer des horaires en fonction des cours entrés par l'utilisateur pour l'UQAM. 
+               Ce projet est un site web qui utilise des techniques d'optimisation, notamment le backtracking, pour générer des horaires en fonction des cours entrés par l'utilisateur pour l'UQAM. 
                 Le site fournit toutes les combinaisons possibles d'horaires pour la liste de cours donnée. Le projet est construit avec <strong>HTML/CSS/JS/Bootstrap</strong> pour l'interface utilisateur et 
-                <strong>Python/Flask</strong> pour le backend. Il inclut également des <strong>scrapers</strong> qui permettent de mettre à jour automatiquement les informations sur les nouveaux cours, 
-                les horaires, et autres informations.
+                <strong>Python/Flask</strong> pour le backend. Il inclut également des scrapers qui permettent de mettre à jour automatiquement les informations sur les nouveaux cours, les horaires, et autres informations. 
             </p>
-            <button class="btn btn-link toggle-image">Afficher/Masquer l'image</button>
-            <img src="example_image_scheduler.png" alt="Générateur d'horaires pour l'UQAM" class="project-image">
+            <img src="example_image_scheduler.png" alt="Planificateur de Cours UQAM" class="project-image">
             <h3>Fonctionnalités :</h3>
             <ul>
-                <li>Génération de toutes les combinaisons d'horaires possibles.</li>
+                <li>Génère toutes les combinaisons possibles d'emplois du temps.</li>
                 <li>Interface simple et intuitive pour entrer les cours.</li>
-                <li>Mise à jour automatique des données via scrapers.</li>
+                <li>Mises à jour automatiques des données via des scrapers.</li>
             </ul>
         </div>
 
         <div class="project-card">
             <h2><a href="http://zicocharts.pythonanywhere.com/" target="_blank">2. Plateforme de prédictions des marchés boursiers</a></h2>
-            <a href="https://github.com/zaki-ay/zicocharts">Voir sur GitHub</a>
+            <a href="https://github.com/zaki-ay/zicocharts">Voir sur GitHub</a>            
             <p>
-                Ce projet est une plateforme qui utilise des <strong>modèles de réseaux de neurones convolutifs (CNN)</strong> pour prédire le graphique du marché boursier du jour en cours. 
-                Les prédictions sont basées sur 13 ans de données historiques. La plateforme est également construite avec <strong>HTML/CSS/JS/Bootstrap</strong> pour l'interface utilisateur et 
-                <strong>Python/Flask</strong> pour le backend. <i>Notez que l'API yfinance expérience actuellement des problèmes.</i>
+                Ce projet est une plateforme qui utilise des modèles de <strong>réseaux de neurones convolutifs (CNN)</strong> pour prédire le graphique du marché boursier du jour en cours. 
+                Les prédictions sont basées sur 13 ans de données historiques. La plateforme est également construite avec <strong>HTML/CSS/JS/Bootstrap</strong> pour l'interface utilisateur 
+                et <strong>Python/Flask</strong> pour le backend. 
+                <i>Notez que l'API yfinance expérience actuellement des limites d'utilisation.</i>
             </p>
-            <button class="btn btn-link toggle-image">Afficher/Masquer l'image</button>
-            <img src="example_image_charts.png" alt="Plateforme de prédictions des marchés boursiers" class="project-image">
+            <img src="example_image_charts.png" alt="Plateforme de Prédiction du Marché Boursier" class="project-image">
             <h3>Fonctionnalités :</h3>
             <ul>
-                <li>Prédiction du graphique du marché boursier pour la journée en cours.</li>
-                <li>Utilisation de modèles CNN entraînés sur 13 ans de données.</li>
-                <li>Interface simple pour visualiser les résultats de la prédiction.</li>
+                <li>Prédit le graphique du marché boursier pour le jour en cours.</li>
+                <li>Utilise des modèles CNN entraînés sur 13 ans de données.</li>
+                <li>Interface simple pour visualiser les résultats des prédictions.</li>
             </ul>
         </div>
 
         <div class="project-card">
-            <h2>3. Contrôleur de thermostat intelligent | Arduino, C++</h2>
-            <a href="https://github.com/zaki-ay/smart-heater">Voir sur GitHub</a>
-            <p>Ce projet IoT est conçu pour automatiser le contrôle d'un thermostat mécanique à l'aide de plusieurs unités NodeMCU, de servomoteurs, et de capteurs de température et infrarouge. Le système permet de régler et maintenir une plage de température souhaitée via des requêtes HTTP gérées par un serveur central NodeMCU. Ce projet améliore l'efficacité énergétique tout en modernisant un thermostat existant.</p>
-            <button class="btn btn-link toggle-image">Afficher/Masquer l'image</button>
-            <img src="example_image_heater.png" alt="Contrôleur de thermostat intelligent" class="project-image">
+            <h2>3. Contrôleur de thermostat intelligent</h2>
+            <a href="https://github.com/zaki-ay/smart-heater">Voir sur GitHub</a>            
+            <p>Ce projet IoT est conçu pour automatiser le contrôle d'un thermostat mécanique à l'aide de plusieurs unités <strong>NodeMCU</strong>, de servomoteurs, 
+                et de capteurs de température et infrarouge. Le système permet de régler et maintenir une plage de température souhaitée via des <strong>requêtes HTTP</strong> gérées 
+                par un serveur central NodeMCU. Le projet repose sur une base de code <strong>C++</strong>. Ce projet améliore l'efficacité énergétique tout en modernisant un thermostat existant.</p>
+            <img src="example_image_heater.png" alt="Contrôleur de Thermostat Intelligent" class="project-image">
             <h3>Fonctionnalités :</h3>
             <ul>
                 <li>Conception d'un système automatisé de contrôle de thermostat utilisant plusieurs unités NodeMCU pour optimiser la régulation de la température dans un appartement.</li>
