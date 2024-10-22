@@ -4,87 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes projets - Zaki A. Yahia</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            line-height: 1.6;
-        }
-        h1, h2 {
+            background-color: #f4f4f4;
             color: #333;
+            padding: 40px;
         }
         h1 {
             margin-bottom: 20px;
+            text-align: center;
         }
-        a {
-            color: #007BFF;
-            text-decoration: none;
+        .project-card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        hr {
-            margin: 40px 0;
+        .project-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
 
-    <h1>Mes projets - Zaki A. Yahia</h1>
-    <div style="float: right; margin-top: -40px;">
-        <a href="index.html" style="margin-right: 10px; padding: 5px 10px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">Français</a>
-        <a href="index_en.html" style="padding: 5px 10px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">English</a>
+    <div class="container">
+        <h1>Mes projets - Zaki A. Yahia</h1>
+        <div class="text-right mb-3">
+            <a href="index.html" class="btn btn-primary">Français</a>
+            <a href="index_en.html" class="btn btn-primary">English</a>
+        </div>
+
+        <div class="project-card">
+            <h2><a href="http://zicozico.pythonanywhere.com/" target="_blank">1. Générateur d'horaires pour l'UQAM</a></h2>
+            <p>
+                Ce projet est un site web qui utilise des techniques d'optimisation, notamment le <strong>backtracking</strong>, pour générer des horaires en fonction des cours entrés par l'utilisateur pour l'UQAM. 
+                Le site fournit toutes les combinaisons possibles d'horaires pour la liste de cours donnée. Le projet est construit avec <strong>HTML/CSS/JS/Bootstrap</strong> pour l'interface utilisateur et 
+                <strong>Python/Flask</strong> pour le backend. Il inclut également des <strong>scrapers</strong> qui permettent de mettre à jour automatiquement les informations sur les nouveaux cours, 
+                les horaires, et autres informations.
+            </p>
+            <img src="example_image_scheduler.png" alt="Générateur d'horaires pour l'UQAM" class="project-image">
+            <h3>Fonctionnalités :</h3>
+            <ul>
+                <li>Génération de toutes les combinaisons d'horaires possibles.</li>
+                <li>Interface simple et intuitive pour entrer les cours.</li>
+                <li>Mise à jour automatique des données via scrapers.</li>
+            </ul>
+        </div>
+
+        <div class="project-card">
+            <h2><a href="http://zicocharts.pythonanywhere.com/" target="_blank">2. Plateforme de prédictions des marchés boursiers</a></h2>
+            <p>
+                Ce projet est une plateforme qui utilise des <strong>modèles de réseaux de neurones convolutifs (CNN)</strong> pour prédire le graphique du marché boursier du jour en cours. 
+                Les prédictions sont basées sur 13 ans de données historiques. La plateforme est également construite avec <strong>HTML/CSS/JS/Bootstrap</strong> pour l'interface utilisateur et 
+                <strong>Python/Flask</strong> pour le backend. <i>Notez que l'API yfinance expérience actuellement des problèmes.</i>
+            </p>
+            <img src="example_image_charts.png" alt="Plateforme de prédictions des marchés boursiers" class="project-image">
+            <h3>Fonctionnalités :</h3>
+            <ul>
+                <li>Prédiction du graphique du marché boursier pour la journée en cours.</li>
+                <li>Utilisation de modèles CNN entraînés sur 13 ans de données.</li>
+                <li>Interface simple pour visualiser les résultats de la prédiction.</li>
+            </ul>
+        </div>
+
+        <div class="project-card">
+            <h2><a href="https://github.com/zaki-ay/smart-heater">3. Contrôleur de thermostat intelligent | Arduino, C++</a></h2>
+            <p>Ce projet IoT est conçu pour automatiser le contrôle d'un thermostat mécanique à l'aide de plusieurs unités NodeMCU, d'un servomoteur, et de capteurs de température et infrarouge. Le système permet de régler et maintenir une plage de température souhaitée via des requêtes HTTP gérées par un serveur central NodeMCU. Ce projet améliore l'efficacité énergétique tout en modernisant un thermostat existant.</p>
+            <img src="example_image_heater.png" alt="Contrôleur de thermostat intelligent" class="project-image">
+            <h3>Fonctionnalités :</h3>
+            <ul>
+                <li>Conception d'un système automatisé de contrôle de thermostat utilisant plusieurs unités NodeMCU pour optimiser la régulation de la température dans un appartement.</li>
+                <li>Intégration d'un capteur de température et d'un capteur infrarouge avec un servomoteur pour un contrôle précis d’un thermostat mécanique, améliorant l'efficacité énergétique.</li>
+                <li>Mise en place d'un serveur central NodeMCU pour gérer les requêtes HTTP des unités clientes, permettant un contrôle fluide et une fonction d’ajustement automatique pour la température souhaitée.</li>
+            </ul>
+        </div>
     </div>
-    <h2><a href="http://zicozico.pythonanywhere.com/" target="_blank">1. Générateur d'horaires pour l'UQAM</a></h2>
-    <p>
-        Ce projet est un site web qui utilise des techniques d'optimisation, notamment le <strong>backtracking</strong>, pour générer des horaires en fonction des cours entrés par l'utilisateur pour l'UQAM. 
-        Le site fournit toutes les combinaisons possibles d'horaires pour la liste de cours donnée. Le projet est construit avec <strong>HTML/CSS/JS/Bootstrap</strong> pour l'interface utilisateur et 
-        <strong>Python/Flask</strong> pour le backend. Il inclut également des <strong>scrapers</strong> qui permettent de mettre à jour automatiquement les informations sur les nouveaux cours, 
-        les horaires, et autres informations.
-    </p>
-
-    <h3>Fonctionnalités :</h3>
-    <ul>
-        <li>Génération de toutes les combinaisons d'horaires possibles.</li>
-        <li>Interface simple et intuitive pour entrer les cours.</li>
-        <li>Mise à jour automatique des données via scrapers.</li>
-    </ul>
-
-    <hr>
-
-    <h2><a href="http://zicocharts.pythonanywhere.com/" target="_blank">2. Plateforme de prédictions des marchés boursiers</a></h2>
-    <p>
-        Ce projet est une plateforme qui utilise des <strong>modèles de réseaux de neurones convolutifs (CNN)</strong> pour prédire le graphique du marché boursier du jour en cours. 
-        Les prédictions sont basées sur 13 ans de données historiques. La plateforme est également construite avec <strong>HTML/CSS/JS/Bootstrap</strong> pour l'interface utilisateur et 
-        <strong>Python/Flask</strong> pour le backend. <i>Notez que l'API yfinance expérience actuellement des problèmes.</i>
-    </p>
-
-    <h3>Fonctionnalités :</h3>
-    <ul>
-        <li>Prédiction du graphique du marché boursier pour la journée en cours.</li>
-        <li>Utilisation de modèles CNN entraînés sur 13 ans de données.</li>
-        <li>Interface simple pour visualiser les résultats de la prédiction.</li>
-    </ul>
-
-    <hr>
-    
-    <h2><a href="https://github.com/zaki-ay/smart-heater">3. Contrôleur de thermostat intelligent | Arduino, C++</a></h2>
-    
-    <p>Ce projet IoT est conçu pour automatiser le contrôle d'un thermostat mécanique à l'aide de plusieurs unités NodeMCU, d'un servomoteur, et de capteurs de température et infrarouge. Le système permet de régler et maintenir une plage de température souhaitée via des requêtes HTTP gérées par un serveur central NodeMCU. Ce projet améliore l'efficacité énergétique tout en modernisant un thermostat existant.</p>
-    
-    <h3>Fonctionnalités :</h3>
-    <ul>
-        <li>Conception d'un système automatisé de contrôle de thermostat utilisant plusieurs unités NodeMCU pour optimiser la régulation de la température dans un appartement.</li>
-        <li>Intégration d'un capteur de température et d'un capteur infrarouge avec un servomoteur pour un contrôle précis d’un thermostat mécanique, améliorant l'efficacité énergétique.</li>
-        <li>Mise en place d'un serveur central NodeMCU pour gérer les requêtes HTTP des unités clientes, permettant un contrôle fluide et une fonction d’ajustement automatique pour la température souhaitée.</li>
-    </ul>
 
 </body>
 </html>
