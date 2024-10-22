@@ -1,4 +1,4 @@
-# Mes projets - Zaki A. Yahia
+# Mes projets - Zaki Yahia
 
 ## 1. [Générateur d'horaires pour l'UQAM](http://zicozico.pythonanywhere.com/)
 
