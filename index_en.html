@@ -14,6 +14,7 @@
             background-color: #f4f4f4;
             color: #333;
             padding: 40px;
+            transition: background-color 0.3s, color 0.3s;
         }
         h1 {
             margin-bottom: 20px;
@@ -26,6 +27,7 @@
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.3s, color 0.3s;
         }
         .project-image {
             display: block;
@@ -36,6 +38,45 @@
         .resume-link {
             text-align: center;
             margin: 20px 0;
+        }
+        body.dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+        .project-card.dark-mode {
+            background-color: #444;
+            border-color: #666;
+        }
+        .toggle-container {
+            display: flex;
+            align-items: center;
+        }
+        .toggle {
+            position: relative;
+            width: 50px;
+            height: 25px;
+            margin-left: 10px;
+            background: #ccc;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .toggle:before {
+            content: '';
+            position: absolute;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            background: white;
+            top: 1px;
+            left: 1px;
+            transition: transform 0.3s;
+        }
+        .toggle.active {
+            background: #4CAF50;
+        }
+        .toggle.active:before {
+            transform: translateX(25px);
         }
     </style>
 </head>
@@ -48,6 +89,9 @@
         <div class="text-right mb-3">
             <a href="index.html" class="btn btn-primary">Français</a>
             <a href="index_en.html" class="btn btn-primary">English</a>
+             <div class="toggle-container">
+                <label class="toggle" id="darkModeToggle"></label>
+            </div>
         </div>
 
         <div class="project-card">
@@ -107,6 +151,15 @@
   gtag('js', new Date());
 
   gtag('config', 'G-05G83S4Y92');
+
+  const toggleButton = document.getElementById('darkModeToggle');
+
+  toggleButton.onclick = function() {
+      document.body.classList.toggle('dark-mode');
+      const projectCards = document.querySelectorAll('.project-card');
+      projectCards.forEach(card => card.classList.toggle('dark-mode'));
+      toggleButton.classList.toggle('active');
+  };
 </script>
 </body>
 </html>
