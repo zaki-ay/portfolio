@@ -53,13 +53,16 @@
         }
         .toggle {
             position: relative;
-            width: 50px;
+            width: 120px;
             height: 25px;
             margin-left: 10px;
+            margin-top:-25px;
             background: #ccc;
             border-radius: 50px;
             cursor: pointer;
             transition: background 0.3s;
+            text-align:center;
+            font-weight:bolder;
         }
         .toggle:before {
             content: '';
@@ -76,7 +79,7 @@
             background: #4CAF50;
         }
         .toggle.active:before {
-            transform: translateX(25px);
+            transform: translateX(95px);
         }
     </style>
 </head>
@@ -90,7 +93,7 @@
             <a href="index.html" class="btn btn-primary">Français</a>
             <a href="index_en.html" class="btn btn-primary">English</a>
             <div class="toggle-container">
-                <label class="toggle" id="darkModeToggle"></label>
+                <label class="toggle" id="darkModeToggle">Clair</label>
             </div>
         </div>
 
@@ -155,13 +158,20 @@
   gtag('config', 'G-05G83S4Y92');
 
   const toggleButton = document.getElementById('darkModeToggle');
+  const modeText = document.getElementsByClassName('toggle');
 
   toggleButton.onclick = function() {
       document.body.classList.toggle('dark-mode');
       const projectCards = document.querySelectorAll('.project-card');
       projectCards.forEach(card => card.classList.toggle('dark-mode'));
       toggleButton.classList.toggle('active');
+
+      if (toggleButton.classList.contains('active')) {
+          modeText[0].textContent = 'Sombre'; 
+      } else {
+          modeText[0].textContent = 'Clair'; 
+      }
   };
 </script>
-
-</body
+</body>
+</html>
