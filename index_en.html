@@ -1,165 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Zaki Yahia</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            background-color: #f4f4f4;
-            color: #333;
-            padding: 40px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        h1 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .project-card {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .project-image {
-            display: block;
-            margin: 20px auto;
-            max-width: 100%;
-            height: auto;
-        }
-        .resume-link {
-            text-align: center;
-            margin: 20px 0;
-        }
-        body.dark-mode {
-            background-color: #333;
-            color: #f4f4f4;
-        }
-        .project-card.dark-mode {
-            background-color: #444;
-            border-color: #666;
-        }
-        .toggle-container {
-            display: flex;
-            align-items: center;
-        }
-        .toggle {
-            position: relative;
-            width: 50px;
-            height: 25px;
-            margin-left: 10px;
-            background: #ccc;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .toggle:before {
-            content: '';
-            position: absolute;
-            width: 23px;
-            height: 23px;
-            border-radius: 50%;
-            background: white;
-            top: 1px;
-            left: 1px;
-            transition: transform 0.3s;
-        }
-        .toggle.active {
-            background: #4CAF50;
-        }
-        .toggle.active:before {
-            transform: translateX(25px);
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Portfolio - Zaki Yahia</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style>
+	body {
+		background-color: #f4f4f4;
+		color: #333;
+		padding: 40px;
+		transition: background-color 0.3s, color 0.3s;
+	}
+
+	h1 {
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	.project-card {
+		background-color: #ffffff;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		padding: 20px;
+		margin-bottom: 20px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		transition: background-color 0.3s, color 0.3s;
+	}
+
+	.project-image {
+		display: block;
+		margin: 20px auto;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.resume-link {
+		text-align: center;
+		margin: 20px 0;
+	}
+
+	body.dark-mode {
+		background-color: #333;
+		color: #f4f4f4;
+	}
+
+	.project-card.dark-mode {
+		background-color: #444;
+		border-color: #666;
+	}
+
+	.toggle-container {
+		display: flex;
+		align-items: center;
+	}
+
+	.toggle {
+		position: relative;
+		width: 120px;
+		height: 25px;
+		margin-left: 10px;
+		margin-top: -25px;
+		background: #ccc;
+		border-radius: 50px;
+		cursor: pointer;
+		transition: background 0.3s;
+		text-align: center;
+		font-weight: bolder;
+	}
+
+	.toggle:before {
+		content: '';
+		position: absolute;
+		width: 23px;
+		height: 23px;
+		border-radius: 50%;
+		background: white;
+		top: 1px;
+		left: 1px;
+		transition: transform 0.3s;
+	}
+
+	.toggle.active {
+		background: #4CAF50;
+	}
+
+	.toggle.active:before {
+		transform: translateX(95px);
+	}
+	</style>
 </head>
+
 <body>
+	<div class="container">
+		<h1>My Portfolio - Zaki Yahia</h1>
+		<h3 class="resume-link"><a href="Resume_Zaki_Yahia.pdf" class="resume-pdf">View my resume</a> | <a href="https://github.com/zaki-ay/">GitHub</a> | <a href="https://www.linkedin.com/in/zaki-yahia/">LinkedIn</a></h3>
+		<div class="text-right mb-3">
+			<a href="index.html" class="btn btn-primary">Français</a>
+			<a href="index_en.html" class="btn btn-primary">English</a>
+			<div class="toggle-container">
+				<label class="toggle" id="darkModeToggle">Light</label>
+			</div>
+		</div>
+		<div class="project-card">
+			<h2><a href="http://zicozico.pythonanywhere.com/" target="_blank">1. UQAM Course Scheduler</a></h2>
+			<a href="https://github.com/zaki-ay/schedules">View on GitHub</a>
+			<p> This project is a website that uses optimization techniques, including <strong>backtracking</strong>, to generate schedules based on courses entered by the user for UQAM. The site provides all possible schedule combinations for the given list of courses. The project is built with <strong>HTML/CSS/JS/Bootstrap</strong> for the user interface and <strong>Python/Flask</strong> for the backend. It also includes <strong>scrapers</strong> to automatically update information on new courses, schedules, and other data. </p>
+			<img src="example_image_scheduler.png" alt="UQAM Course Scheduler" class="project-image">
+			<h3>Features:</h3>
+			<ul>
+				<li>Generates all possible schedule combinations.</li>
+				<li>Simple and intuitive interface for entering courses.</li>
+				<li>Automatic data updates via scrapers.</li>
+			</ul>
+		</div>
+		<div class="project-card">
+			<h2><a href="http://zicocharts.pythonanywhere.com/" target="_blank">2. Stock Market Prediction Platform</a></h2>
+			<a href="https://github.com/zaki-ay/zicocharts">View on GitHub</a>
+			<p> This project is a platform that uses <strong>Convolutional Neural Networks (CNN)</strong> models to predict the stock market chart for the current day. Predictions are based on 13 years of historical data. The platform is also built with <strong>HTML/CSS/JS/Bootstrap</strong> for the user interface and <strong>Python/Flask</strong> for the backend. <i>Please note that the yfinance API is currently experiencing issues.</i>
+			</p>
+			<img src="example_image_charts.png" alt="Stock Market Prediction Platform" class="project-image">
+			<h3>Features:</h3>
+			<ul>
+				<li>Predicts the stock market chart for the current day.</li>
+				<li>Uses CNN models trained on 13 years of data.</li>
+				<li>Simple interface for visualizing prediction results.</li>
+			</ul>
+		</div>
+		<div class="project-card">
+			<h2>3. Smart Thermostat Controller | Arduino, C++</h2>
+			<a href="https://github.com/zaki-ay/smart-heater">View on GitHub</a>
+			<p>This IoT project is designed to automate the control of a mechanical thermostat using several NodeMCU units, servomotors, and temperature and infrared sensors. The system allows for setting and maintaining a desired temperature range via HTTP requests managed by a central NodeMCU server. This project enhances energy efficiency while modernizing an existing thermostat.</p>
+			<img src="example_image_heater.png" alt="Smart Thermostat Controller" class="project-image">
+			<h3>Features:</h3>
+			<ul>
+				<li>Design of an automated thermostat control system using multiple NodeMCU units to optimize temperature regulation in an apartment.</li>
+				<li>Integration of a temperature sensor and an infrared sensor with a servomotor for precise control of a mechanical thermostat, improving energy efficiency.</li>
+				<li>Establishment of a central NodeMCU server to manage HTTP requests from client units, allowing smooth control and automatic adjustment for the desired temperature.</li>
+			</ul>
+		</div>
+	</div>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-05G83S4Y92"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
 
-    <div class="container">
-        <h1>My Portfolio - Zaki Yahia</h1>
-        <h3 class="resume-link"><a href="Resume_Zaki_Yahia.pdf" class="resume-pdf">View my resume</a> | <a href="https://github.com/zaki-ay/">GitHub</a> | <a href="https://www.linkedin.com/in/zaki-yahia/">LinkedIn</a></h3>
-        
-        <div class="text-right mb-3">
-            <a href="index.html" class="btn btn-primary">Français</a>
-            <a href="index_en.html" class="btn btn-primary">English</a>
-             <div class="toggle-container">
-                <label class="toggle" id="darkModeToggle"></label>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <h2><a href="http://zicozico.pythonanywhere.com/" target="_blank">1. UQAM Course Scheduler</a></h2>
-            <a href="https://github.com/zaki-ay/schedules">View on GitHub</a>
-            <p>
-                This project is a website that uses optimization techniques, including <strong>backtracking</strong>, to generate schedules based on courses entered by the user for UQAM. 
-                The site provides all possible schedule combinations for the given list of courses. The project is built with <strong>HTML/CSS/JS/Bootstrap</strong> for the user interface and 
-                <strong>Python/Flask</strong> for the backend. It also includes <strong>scrapers</strong> to automatically update information on new courses, 
-                schedules, and other data.
-            </p>
-            <img src="example_image_scheduler.png" alt="UQAM Course Scheduler" class="project-image">
-            <h3>Features:</h3>
-            <ul>
-                <li>Generates all possible schedule combinations.</li>
-                <li>Simple and intuitive interface for entering courses.</li>
-                <li>Automatic data updates via scrapers.</li>
-            </ul>
-        </div>
-
-        <div class="project-card">
-            <h2><a href="http://zicocharts.pythonanywhere.com/" target="_blank">2. Stock Market Prediction Platform</a></h2>
-            <a href="https://github.com/zaki-ay/zicocharts">View on GitHub</a>            
-            <p>
-                This project is a platform that uses <strong>Convolutional Neural Networks (CNN)</strong> models to predict the stock market chart for the current day. 
-                Predictions are based on 13 years of historical data. The platform is also built with <strong>HTML/CSS/JS/Bootstrap</strong> for the user interface and 
-                <strong>Python/Flask</strong> for the backend. <i>Please note that the yfinance API is currently experiencing issues.</i>
-            </p>
-            <img src="example_image_charts.png" alt="Stock Market Prediction Platform" class="project-image">
-            <h3>Features:</h3>
-            <ul>
-                <li>Predicts the stock market chart for the current day.</li>
-                <li>Uses CNN models trained on 13 years of data.</li>
-                <li>Simple interface for visualizing prediction results.</li>
-            </ul>
-        </div>
-
-        <div class="project-card">
-            <h2>3. Smart Thermostat Controller | Arduino, C++</h2>
-            <a href="https://github.com/zaki-ay/smart-heater">View on GitHub</a>            
-            <p>This IoT project is designed to automate the control of a mechanical thermostat using several NodeMCU units, servomotors, and temperature and infrared sensors. The system allows for setting and maintaining a desired temperature range via HTTP requests managed by a central NodeMCU server. This project enhances energy efficiency while modernizing an existing thermostat.</p>
-            <img src="example_image_heater.png" alt="Smart Thermostat Controller" class="project-image">
-            <h3>Features:</h3>
-            <ul>
-                <li>Design of an automated thermostat control system using multiple NodeMCU units to optimize temperature regulation in an apartment.</li>
-                <li>Integration of a temperature sensor and an infrared sensor with a servomotor for precise control of a mechanical thermostat, improving energy efficiency.</li>
-                <li>Establishment of a central NodeMCU server to manage HTTP requests from client units, allowing smooth control and automatic adjustment for the desired temperature.</li>
-            </ul>
-        </div>
-    </div>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-05G83S4Y92"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-05G83S4Y92');
-
-  const toggleButton = document.getElementById('darkModeToggle');
-
-  toggleButton.onclick = function() {
-      document.body.classList.toggle('dark-mode');
-      const projectCards = document.querySelectorAll('.project-card');
-      projectCards.forEach(card => card.classList.toggle('dark-mode'));
-      toggleButton.classList.toggle('active');
-  };
-</script>
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+	gtag('config', 'G-05G83S4Y92');
+	const toggleButton = document.getElementById('darkModeToggle');
+	const modeText = document.getElementsByClassName('toggle');
+	toggleButton.onclick = function() {
+		document.body.classList.toggle('dark-mode');
+		const projectCards = document.querySelectorAll('.project-card');
+		projectCards.forEach(card => card.classList.toggle('dark-mode'));
+		toggleButton.classList.toggle('active');
+		if(toggleButton.classList.contains('active')) {
+			modeText[0].textContent = 'Dark';
+		} else {
+			modeText[0].textContent = 'Light';
+		}
+	};
+	</script>
 </body>
+
 </html>
