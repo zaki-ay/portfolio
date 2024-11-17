@@ -7,7 +7,7 @@
 
 Ce projet est un site web qui utilise des techniques d'optimisation, notamment le **backtracking**, pour générer des horaires en fonction des cours entrés par l'utilisateur pour l'UQAM. Le site fournit toutes les combinaisons possibles d'horaires pour la liste de cours donnée.  
 Le projet est construit avec **HTML/CSS/JS/Bootstrap** pour l'interface utilisateur et **Python/Flask** pour le backend.  
-Il inclut également des **scrapers** qui permettent de mettre à jour automatiquement les informations sur les nouveaux cours, les horaires, et autres informations.
+Les données sont stockées dans une **base de données SQL**, qui est mise à jour automatiquement grâce à des **scrapers BeautifulSoup**.
 
 ### Fonctionnalités :
 - Génération de toutes les combinaisons d'horaires possibles.
