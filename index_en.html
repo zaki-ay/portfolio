@@ -1,165 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Portfolio - Zaki Yahia</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Zaki Yahia</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
 
-            .glass {
-                backdrop-filter: blur(8px);
-                background: rgba(255, 255, 255, 0.6);
-                border: 1px solid rgba(255, 255, 255, 0.4);
-                border-radius: 12px;
-                transition: all 0.3s ease-in-out;
-            }
+      .glass {
+        backdrop-filter: blur(8px);
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 12px;
+        transition: all 0.3s ease-in-out;
+      }
 
-            .glass:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-            }
+      .glass:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
 
-            .light-gradient {
-                background: linear-gradient(to right, #93c5fd, #d1d5db);
-            }
+      .light-gradient {
+        background: linear-gradient(to right, #93c5fd, #d1d5db);
+      }
 
-            .project-card {
-                background: rgb(243, 245, 245);
-                background: linear-gradient(0deg, rgba(243, 245, 245, 1) 0%, rgba(242, 242, 242, 1) 100%);
-                margin: 25px 0;
-                padding: 25px;
-                border-radius: 15px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                transition: box-shadow 0.3s ease;
-                font-family: 'Montserrat', sans-serif;
-            }
+      .project-card {
+        background: rgb(243, 245, 245);
+        background: linear-gradient(0deg, rgba(243, 245, 245, 1) 0%, rgba(242, 242, 242, 1) 100%);
+        margin: 25px 0;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+      }
 
-            .project-card:hover {
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-            }
+      .project-card:hover {
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      }
 
-            .project-card h3 a {
-                color: #1a202c;
-                text-decoration: none;
-                transition: color 0.3s ease;
-                font-weight: 600;
-            }
+      .project-card h3 a {
+        color: #1a202c;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: 600;
+      }
 
-            .project-card h3 a:hover {
-                color: #3182ce;
-            }
+      .project-card h3 a:hover {
+        color: #3182ce;
+      }
 
-            .project-card p {
-                line-height: 1.5;
-                margin-bottom: 20px;
-                color: #4a5568;
-            }
+      .project-card p {
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #4a5568;
+      }
 
-            .project-card ul {
-                list-style-type: disc;
-                padding-left: 1.5rem;
-            }
+      .project-card ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+      }
 
-            .project-card ul li {
-                margin-bottom: 10px;
-            }
+      .project-card ul li {
+        margin-bottom: 10px;
+      }
 
-            .project-card img {
-                max-width: 100%;
-                width: 70%;
-                height: auto;
-                border-radius: 12px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
-            }
+      .project-card img {
+        max-width: 100%;
+        width: 70%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
 
-            @media (max-width: 768px) {
-                .project-card {
-                    padding: 20px;
-                }
-            }
+      @media (max-width: 768px) {
+        .project-card {
+          padding: 20px;
+        }
+      }
 
-            .project-card img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 12px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
-            }
+      .project-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
 
-            .projects-button {
-                font-weight: bold;
-            }
+      .projects-button {
+        font-weight: bold;
+      }
 
-            .mt-6.flex,
-            .flex.justify-center.space-x-4 {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-            }
+      .mt-6.flex,
+      .flex.justify-center.space-x-4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
 
-            .mt-6.flex a,
-            .flex.justify-center.space-x-4 a {
-                display: inline-block;
-                text-align: center;
-                padding: 12px 20px;
-                margin: 0;
-                width: auto;
-            }
+      .mt-6.flex a,
+      .flex.justify-center.space-x-4 a {
+        display: inline-block;
+        text-align: center;
+        padding: 12px 20px;
+        margin: 0;
+        width: auto;
+      }
 
-            @media (max-width: 420px) {
+      @media (max-width: 420px) {
 
-                .mt-6.flex,
-                .flex.justify-center.space-x-4 {
-                    flex-direction: column;
-                    gap: 10px;
-                }
+        .mt-6.flex,
+        .flex.justify-center.space-x-4 {
+          flex-direction: column;
+          gap: 10px;
+        }
 
-                .mt-6.flex a,
-                .flex.justify-center.space-x-4 a {
-                    width: 100%;
-                    max-width: 300px;
-                    margin: 0 auto;
-                }
-            }
+        .mt-6.flex a,
+        .flex.justify-center.space-x-4 a {
+          width: 100%;
+          max-width: 300px;
+          margin: 0 auto;
+        }
+      }
 
-            .fixed {
-                position: fixed;
-                top: 16px;
-                right: 16px;
-                z-index: 9999;
-            }
+      .fixed {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        z-index: 9999;
+      }
 
-            a {
-                text-align: center;
-            }
-                        .tech-logos {
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-                margin-top: 20px;
-            }
+      a {
+        text-align: center;
+      }
 
-            .tech-logo {
-                width: 70px;
-                height: 70px;
-                border-radius: 10%;
-                overflow: hidden;
-            }
+      /* Section Styling */
+      .tech-section {
+        padding: 0px 0px 50px 20px;
+        text-align: center;
+      }
 
-            .tech-logo img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        </style>
+      /* Title Styling */
+      .tech-title {
+        font-size: 2.5rem;
+        font-weight: bolder;
+      }
+
+      /* Tech Logos Styling */
+      .tech-logos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .tech-logo {
+        width: 100px;
+        height: 120px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .tech-logo:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Image Styling */
+      .tech-logo img {
+        width: 80%;
+        height: 70%;
+        object-fit: contain;
+        margin-top: 10px;
+      }
+
+      /* Text Styling */
+      .tech-name {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: #34495e;
+      }
+
+      /* Responsive Styling */
+      @media (max-width: 768px) {
+        .tech-logo {
+          width: 80px;
+          height: 100px;
+        }
+
+        .tech-title {
+          font-size: 2rem;
+        }
+
+        .tech-logos {
+          gap: 20px;
+        }
+      }
+
+      /* Hover Animation */
+      .tech-logo img {
+        transition: transform 0.3s ease;
+      }
+
+      .tech-logo:hover img {
+        transform: rotate(10deg);
+      }
+    </style>
     </head>
    <body class="light-gradient text-gray-900 font-poppins">
     <!-- Hero Section -->
@@ -168,45 +229,59 @@
         <h1 class="text-3xl font-extrabold text-gray-800">Zaki Yahia</h1>
         <p class="text-lg text-gray-700 mt-4">A showcase of my skills, projects, and passions.</p>
         <div class="mt-6 flex justify-center space-x-4">
-            <a href="Resume_Zaki_Yahia.pdf" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">View my resume</a>
+            <a href="CV_Zaki_Yahia.pdf" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">View my CV</a>
             <a href="https://github.com/zaki-ay/" target="_blank" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">GitHub</a>
             <a href="https://www.linkedin.com/in/zaki-yahia/" target="_blank" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">LinkedIn</a>
         </div>
         <div class="fixed top-4 right-4">
             <button id="language-toggle" class="glass px-4 py-2 rounded-full">
-                <a href="index.html">
+                <a href="index_en.html">
                     <strong>Français</strong> 🇫🇷 </a>
             </button>
         </div>
     </section>
-   <!--  <section class="container mx-auto px-4 py-2">
-        <h2 class="text-3xl font-bold text-center mb-8">My Technologies</h2>
+    <section class="container mx-auto px-16 py-2">
+      <h2 class="text-3xl font-extrabold text-gray-800 text-center mb-8">À propos de moi</h2>
+      <p class="glass p-6 text-gray-800 hover:shadow-lg projects-button"> Hey, I’m Zaki —   a computer science grad from UQAM who loves bringing creative tech ideas to life. Whether it’s coding smart systems with C++ and Python or tinkering with Arduino projects, I’m all about making tech that works and wows. Big on cybersecurity, machine learning, and solving cool challenges, I’m always looking for the next fun project!</p>
+    </section>
+    <section class="container mx-auto px-4 py-2">
+      <div class="tech-section">
+        <h2 class="text-3xl font-extrabold text-gray-800">My technologies</h2>
         <div class="flex justify-center space-x-4">
-            <div class="tech-logos">
+          <div class="tech-logos">
             <div class="tech-logo">
-                <img src="python.png" alt="Python Logo">
-            </div>
-            <div class="tech-logo">
-                <img src="cpp.png" alt="C++ Logo">
+              <img src="python.png" alt="Python Logo">
+              <div class="tech-name">Python</div>
             </div>
             <div class="tech-logo">
-                <img src="csharp.png" alt="C# Logo">
+              <img src="cpp.png" alt="C++ Logo">
+              <div class="tech-name">C++</div>
             </div>
             <div class="tech-logo">
-                <img src="java.png" alt="Java Logo">
+              <img src="csharp.png" alt="C# Logo">
+              <div class="tech-name">C#</div>
             </div>
             <div class="tech-logo">
-                <img src="js.png" alt="Javascript Logo">
+              <img src="java.png" alt="Java Logo">
+              <div class="tech-name">Java</div>
             </div>
             <div class="tech-logo">
-                <img src="bash.png" alt="Bash Logo">
+              <img src="js.png" alt="Javascript Logo">
+              <div class="tech-name">JavaScript</div>
             </div>
             <div class="tech-logo">
-                <img src="git.png" alt="Git Logo">
+              <img src="bash.png" alt="Bash Logo">
+              <div class="tech-name">Bash</div>
             </div>
+            <div class="tech-logo">
+              <img src="git.png" alt="Git Logo">
+              <div class="tech-name">Git</div>
             </div>
+          </div>
         </div>
-    </section> -->
+      </div>
+    </section>
+
     <!-- Project Links -->
     <section class="container mx-auto px-8 py-8">
         <h2 class="text-3xl font-bold text-center mb-8">My Personal Projects</h2>
@@ -217,7 +292,7 @@
         </div>
     </section>
     <!-- Detailed Project Descriptions -->
-    <section id="project1" class="container mx-auto px-8 py-12 project-card">
+    <section id="project1" class="container mx-auto px-12 py-12 project-card">
         <h3 class="text-2xl font-bold mb-4">
             <a href="http://zicozico.pythonanywhere.com/">1. UQAM Schedule Generator 📅 🔗</a>
         </h3>
@@ -236,7 +311,7 @@
             <li>SQL database.</li>
         </ul>
     </section>
-    <section id="project2" class="container mx-auto px-8 py-12 project-card">
+    <section id="project2" class="container mx-auto px-12 py-12 project-card">
         <h3 class="text-2xl font-bold mb-4">
             <a href="http://zicocharts.pythonanywhere.com/">2. Stock Market Prediction Platform 📈 🔗</a>
         </h3>
@@ -254,7 +329,7 @@
             <li>Simple interface to visualize prediction results.</li>
         </ul>
     </section>
-    <section id="project3" class="container mx-auto px-8 py-12 project-card">
+    <section id="project3" class="container mx-auto px-12 py-12 project-card">
         <h3 class="text-2xl font-bold mb-4">3. IoT Thermostat Controller ☀️</h3>
         <h6 class="text-m font-bold mb-4">
             <a href="https://github.com/zaki-ay/smart-heater">View on GitHub 🔗</a>
