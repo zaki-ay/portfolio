@@ -162,6 +162,7 @@ a {
   align-items: center;
   justify-content: flex-start;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 10px; /* Added padding */
 }
 
 .tech-logo:hover {
@@ -172,7 +173,7 @@ a {
 /* Image Styling */
 .tech-logo img {
   width: 80%;
-  height: 70%;
+  height: 65%;
   object-fit: contain;
   margin-top: 10px;
 }
@@ -191,7 +192,8 @@ a {
 @media (max-width: 768px) {
   .tech-logo {
     width: 80px;
-    height: 100px;
+    height: 110px;
+    padding-bottom: 8px;
   }
 
   .tech-title {
