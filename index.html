@@ -1,273 +1,344 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mon Portfolio - Zaki Yahia</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Zaki Yahia</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
 
-            .glass {
-                backdrop-filter: blur(8px);
-                background: rgba(255, 255, 255, 0.6);
-                border: 1px solid rgba(255, 255, 255, 0.4);
-                border-radius: 12px;
-                transition: all 0.3s ease-in-out;
-            }
+      .glass {
+        backdrop-filter: blur(8px);
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 12px;
+        transition: all 0.3s ease-in-out;
+      }
 
-            .glass:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-            }
+      .glass:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
 
-            .light-gradient {
-                background: linear-gradient(to right, #93c5fd, #d1d5db);
-            }
+      .light-gradient {
+        background: linear-gradient(to right, #93c5fd, #d1d5db);
+      }
 
-            .project-card {
-                background: rgb(243, 245, 245);
-                background: linear-gradient(0deg, rgba(243, 245, 245, 1) 0%, rgba(242, 242, 242, 1) 100%);
-                margin: 25px 0;
-                padding: 25px;
-                border-radius: 15px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                transition: box-shadow 0.3s ease;
-                font-family: 'Montserrat', sans-serif;
-            }
+      .project-card {
+        background: rgb(243, 245, 245);
+        background: linear-gradient(0deg, rgba(243, 245, 245, 1) 0%, rgba(242, 242, 242, 1) 100%);
+        margin: 25px 0;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+      }
 
-            .project-card:hover {
-                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-            }
+      .project-card:hover {
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      }
 
-            .project-card h3 a {
-                color: #1a202c;
-                text-decoration: none;
-                transition: color 0.3s ease;
-                font-weight: 600;
-            }
+      .project-card h3 a {
+        color: #1a202c;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: 600;
+      }
 
-            .project-card h3 a:hover {
-                color: #3182ce;
-            }
+      .project-card h3 a:hover {
+        color: #3182ce;
+      }
 
-            .project-card p {
-                line-height: 1.5;
-                margin-bottom: 20px;
-                color: #4a5568;
-            }
+      .project-card p {
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #4a5568;
+      }
 
-            .project-card ul {
-                list-style-type: disc;
-                padding-left: 1.5rem;
-            }
+      .project-card ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+      }
 
-            .project-card ul li {
-                margin-bottom: 10px;
-            }
+      .project-card ul li {
+        margin-bottom: 10px;
+      }
 
-            .project-card img {
-                max-width: 100%;
-                width: 70%;
-                height: auto;
-                border-radius: 12px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
-            }
+      .project-card img {
+        max-width: 100%;
+        width: 70%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
 
-            @media (max-width: 768px) {
-                .project-card {
-                    padding: 20px;
-                }
-            }
+      @media (max-width: 768px) {
+        .project-card {
+          padding: 20px;
+        }
+      }
 
-            .project-card img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 12px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
-            }
+      .project-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
 
-            .projects-button {
-                font-weight: bold;
-            }
+      .projects-button {
+        font-weight: bold;
+      }
 
-            .mt-6.flex,
-            .flex.justify-center.space-x-4 {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-            }
+      .mt-6.flex,
+      .flex.justify-center.space-x-4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
 
-            .mt-6.flex a,
-            .flex.justify-center.space-x-4 a {
-                display: inline-block;
-                text-align: center;
-                padding: 12px 20px;
-                margin: 0;
-                width: auto;
-            }
+      .mt-6.flex a,
+      .flex.justify-center.space-x-4 a {
+        display: inline-block;
+        text-align: center;
+        padding: 12px 20px;
+        margin: 0;
+        width: auto;
+      }
 
-            @media (max-width: 420px) {
+      @media (max-width: 420px) {
 
-                .mt-6.flex,
-                .flex.justify-center.space-x-4 {
-                    flex-direction: column;
-                    gap: 10px;
-                }
+        .mt-6.flex,
+        .flex.justify-center.space-x-4 {
+          flex-direction: column;
+          gap: 10px;
+        }
 
-                .mt-6.flex a,
-                .flex.justify-center.space-x-4 a {
-                    width: 100%;
-                    max-width: 300px;
-                    margin: 0 auto;
-                }
-            }
+        .mt-6.flex a,
+        .flex.justify-center.space-x-4 a {
+          width: 100%;
+          max-width: 300px;
+          margin: 0 auto;
+        }
+      }
 
-            .fixed {
-                position: fixed;
-                top: 16px;
-                right: 16px;
-                z-index: 9999;
-            }
+      .fixed {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        z-index: 9999;
+      }
 
-            a {
-                text-align: center;
-            }
-                        .tech-logos {
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-                margin-top: 20px;
-            }
+      a {
+        text-align: center;
+      }
 
-            .tech-logo {
-                width: 70px;
-                height: 70px;
-                border-radius: 10%;
-                overflow: hidden;
-            }
+      /* Section Styling */
+      .tech-section {
+        padding: 0px 0px 50px 20px;
+        text-align: center;
+      }
 
-            .tech-logo img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        </style>
-    </head>
-    <body class="light-gradient text-gray-900 font-poppins">
-        <!-- Hero Section -->
-        <section class="text-center py-16 px-4">
-            <h1 class="text-5xl font-extrabold text-gray-800">Mon Portfolio</h1>
-            <h1 class="text-3xl font-extrabold text-gray-800">Zaki Yahia</h1>
-            <p class="text-lg text-gray-700 mt-4">Une vitrine de mes compétences, projets et passions.</p>
-            <div class="mt-6 flex justify-center space-x-4">
-                <a href="CV_Zaki_Yahia.pdf" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">Voir mon CV</a>
-                <a href="https://github.com/zaki-ay/" target="_blank" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">GitHub</a>
-                <a href="https://www.linkedin.com/in/zaki-yahia/" target="_blank" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">LinkedIn</a>
+      /* Title Styling */
+      .tech-title {
+        font-size: 2.5rem;
+        font-weight: bolder;
+      }
+
+      /* Tech Logos Styling */
+      .tech-logos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .tech-logo {
+        width: 100px;
+        height: 120px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .tech-logo:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Image Styling */
+      .tech-logo img {
+        width: 80%;
+        height: 70%;
+        object-fit: contain;
+        margin-top: 10px;
+      }
+
+      /* Text Styling */
+      .tech-name {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: #34495e;
+      }
+
+      /* Responsive Styling */
+      @media (max-width: 768px) {
+        .tech-logo {
+          width: 80px;
+          height: 100px;
+        }
+
+        .tech-title {
+          font-size: 2rem;
+        }
+
+        .tech-logos {
+          gap: 20px;
+        }
+      }
+
+      /* Hover Animation */
+      .tech-logo img {
+        transition: transform 0.3s ease;
+      }
+
+      .tech-logo:hover img {
+        transform: rotate(10deg);
+      }
+    </style>
+  </head>
+  <body class="light-gradient text-gray-900 font-poppins">
+    <!-- Hero Section -->
+    <section class="text-center py-16 px-4">
+      <h1 class="text-5xl font-extrabold text-gray-800">Mon Portfolio</h1>
+      <h1 class="text-3xl font-extrabold text-gray-800">Zaki Yahia</h1>
+      <p class="text-lg text-gray-700 mt-4">Une vitrine de mes compétences, projets et passions.</p>
+      <div class="mt-6 flex justify-center space-x-4">
+        <a href="CV_Zaki_Yahia.pdf" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">Voir mon CV</a>
+        <a href="https://github.com/zaki-ay/" target="_blank" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">GitHub</a>
+        <a href="https://www.linkedin.com/in/zaki-yahia/" target="_blank" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">LinkedIn</a>
+      </div>
+      <div class="fixed top-4 right-4">
+        <button id="language-toggle" class="glass px-4 py-2 rounded-full">
+          <a href="index_en.html">
+            <strong>English</strong> 🇺🇸 </a>
+        </button>
+      </div>
+    </section>
+    <section class="container mx-auto px-16 py-2">
+      <h2 class="text-3xl font-extrabold text-gray-800 text-center mb-8">À propos de moi</h2>
+      <p class="glass p-6 text-gray-800 hover:shadow-lg projects-button"> Salut, moi c’est Zaki — diplômé en informatique de l’UQAM et passionné par la création de projets tech qui sortent du lot. Que ce soit coder des systèmes intelligents en C++ ou Python ou bricoler avec Arduino, j’adore donner vie à des idées innovantes. Adepte de cybersécurité, d'apprentissage machine et de défis excitants, je suis toujours prêt pour un nouveau projet innovant! </p>
+    </section>
+    <section class="container mx-auto px-4 py-2">
+      <div class="tech-section">
+        <h2 class="text-3xl font-extrabold text-gray-800">Mes technologies</h2>
+        <div class="flex justify-center space-x-4">
+          <div class="tech-logos">
+            <div class="tech-logo">
+              <img src="python.png" alt="Python Logo">
+              <div class="tech-name">Python</div>
             </div>
-            <div class="fixed top-4 right-4">
-                <button id="language-toggle" class="glass px-4 py-2 rounded-full">
-                    <a href="index_en.html">
-                        <strong>English</strong> 🇺🇸 </a>
-                </button>
+            <div class="tech-logo">
+              <img src="cpp.png" alt="C++ Logo">
+              <div class="tech-name">C++</div>
             </div>
-        </section>
-       <!--  <section class="container mx-auto px-4 py-2">
-            <h2 class="text-3xl font-bold text-center mb-8">Mes technologies</h2>
-            <div class="flex justify-center space-x-4">
-                <div class="tech-logos">
-                <div class="tech-logo">
-                    <img src="python.png" alt="Python Logo">
-                </div>
-                <div class="tech-logo">
-                    <img src="cpp.png" alt="C++ Logo">
-                </div>
-                <div class="tech-logo">
-                    <img src="csharp.png" alt="C# Logo">
-                </div>
-                <div class="tech-logo">
-                    <img src="java.png" alt="Java Logo">
-                </div>
-                <div class="tech-logo">
-                    <img src="js.png" alt="Javascript Logo">
-                </div>
-                <div class="tech-logo">
-                    <img src="bash.png" alt="Bash Logo">
-                </div>
-                <div class="tech-logo">
-                    <img src="git.png" alt="Git Logo">
-                </div>
-                </div>
+            <div class="tech-logo">
+              <img src="csharp.png" alt="C# Logo">
+              <div class="tech-name">C#</div>
             </div>
-        </section> -->
-        <!-- Project Links -->
-        <section class="container mx-auto px-8 py-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Mes projets personnels</h2>
-            <div class="flex justify-center space-x-4">
-                <a href="#project1" class="glass p-6 text-center text-gray-800 w-40 hover:shadow-lg projects-button">Générateur d'horaires 📅</a>
-                <a href="#project2" class="glass p-6 text-center text-gray-800 w-40 hover:shadow-lg projects-button">Prévisions boursières 📈</a>
-                <a href="#project3" class="glass p-6 text-center text-gray-800 w-40 hover:shadow-lg projects-button">Thermostat intelligent ☀️</a>
+            <div class="tech-logo">
+              <img src="java.png" alt="Java Logo">
+              <div class="tech-name">Java</div>
             </div>
-        </section>
-        <!-- Detailed Project Descriptions -->
-        <section id="project1" class="container mx-auto px-8 py-12 project-card">
-            <h3 class="text-2xl font-bold mb-4">
-                <a href="http://zicozico.pythonanywhere.com/">1. Générateur d'horaires pour l'UQAM 📅 🔗</a>
-            </h3>
-            <h6 class="text-m font-bold mb-4">
-                <a href="https://github.com/zaki-ay/schedules">Voir sur GitHub 🔗</a>
-            </h6>
-            <p>Ce projet est un site web qui utilise des techniques d'optimisation, notamment le backtracking, pour générer des horaires en fonction des cours entrés par l'utilisateur pour l'UQAM. Le site fournit toutes les combinaisons possibles d'horaires pour la liste de cours donnée. <br>
-            Le projet est construit avec <strong>HTML/CSS/JS</strong> pour l'interface utilisateur et <strong>Python/Flask</strong> pour le backend. Les données sont stockées dans une <strong>base de données SQL</strong>, qui est mise à jour automatiquement grâce à des <strong>scrapers BeautifulSoup.</strong>
-            </p>
-            <img src="example_image_scheduler.png" alt="Planificateur de Cours UQAM" class="w-full md:w-1/2 mx-auto rounded-lg shadow-lg mb-6">
-            <h3 class="text-m font-bold mb-4">Fonctionnalités ⚙️ :</h3>
-            <ul class="mt-4">
-                <li>Génère toutes les combinaisons possibles d'emplois du temps;</li>
-                <li>Interface simple et intuitive pour entrer les cours;</li>
-                <li>Mises à jour automatiques des données via des scrapers;</li>
-                <li>Base de données SQL.</li>
-            </ul>
-        </section>
-        <section id="project2" class="container mx-auto px-8 py-12 project-card">
-            <h3 class="text-2xl font-bold mb-4">
-                <a href="http://zicocharts.pythonanywhere.com/">2. Plateforme de prédictions des marchés boursiers 📈 🔗</a>
-            </h3>
-            <h6 class="text-m font-bold mb-4">
-                <a href="https://github.com/zaki-ay/zicocharts">Voir sur GitHub 🔗</a>
-            </h6>
-            <p>Ce projet est une plateforme qui utilise des modèles de <strong>réseaux de neurones convolutifs (CNN)</strong> pour prédire le graphique du marché boursier du jour en cours. Les prédictions sont basées sur 13 ans de données historiques. <br>
-            La plateforme est  construite avec <strong>HTML/CSS/JS/Bootstrap</strong> pour l'interface utilisateur et <strong>Python/Flask</strong> pour le backend. <i>Notez que l'API yfinance expérience actuellement des limites d'utilisation.</i>
-            </p>
-            <img src="example_image_charts.png" alt="Plateforme de Prédiction du Marché Boursier" class="w-full md:w-1/2 mx-auto rounded-lg shadow-lg mb-6">
-            <h3 class="text-m font-bold mb-4">Fonctionnalités ⚙️ :</h3>
-            <ul class="mt-4">
-                <li>Prédit le graphique du marché boursier pour le jour en cours;</li>
-                <li>Utilise des modèles CNN entraînés sur 13 ans de données;</li>
-                <li>Interface simple pour visualiser les résultats de prédictions.</li>
-            </ul>
-        </section>
-        <section id="project3" class="container mx-auto px-8 py-12 project-card">
-            <h3 class="text-2xl font-bold mb-4">3. Contrôleur de Thermostat IoT ☀️</h3>
-            <h6 class="text-m font-bold mb-4">
-                <a href="https://github.com/zaki-ay/smart-heater">Voir sur GitHub 🔗</a>
-            </h6>
-            <p>Ce projet IoT est conçu pour automatiser le contrôle d'un thermostat mécanique à l'aide de plusieurs unités <strong>NodeMCU</strong>, de servomoteurs, et de capteurs de température et infrarouge. Le système permet de régler et maintenir une plage de température souhaitée via des <strong>requêtes HTTP</strong> gérées par un serveur central NodeMCU. <br>
-            Le projet repose sur une base de code <strong>C++</strong>. Ce projet améliore l'efficacité énergétique tout en modernisant un thermostat existant. </p>
-            <img src="example_image_heater.png" alt="Contrôleur Thermostat IoT" class="w-full md:w-1/2 mx-auto rounded-lg shadow-lg mb-6">
-            <h3 class="text-m font-bold mb-4">Fonctionnalités ⚙️ :</h3>
-            <ul class="mt-4">
-                <li>Conception d'un système automatisé de contrôle de thermostat utilisant plusieurs unités NodeMCU pour optimiser la régulation de la température dans un appartement;</li>
-                <li>Intégration d'un capteur de température et d'un capteur infrarouge avec un servomoteur pour un contrôle précis d’un thermostat mécanique, améliorant l'efficacité énergétique;</li>
-                <li>Mise en place d'un serveur central NodeMCU pour gérer les requêtes HTTP des unités clientes, permettant un contrôle fluide et une fonction d’ajustement automatique pour la température souhaitée.</li>
-            </ul>
-        </section>
-    </body>
+            <div class="tech-logo">
+              <img src="js.png" alt="Javascript Logo">
+              <div class="tech-name">JavaScript</div>
+            </div>
+            <div class="tech-logo">
+              <img src="bash.png" alt="Bash Logo">
+              <div class="tech-name">Bash</div>
+            </div>
+            <div class="tech-logo">
+              <img src="git.png" alt="Git Logo">
+              <div class="tech-name">Git</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Project Links -->
+    <section class="container mx-auto px-8 py-8">
+      <h2 class="text-3xl font-extrabold text-gray-800 text-center mb-8">Mes projets personnels</h2>
+      <div class="flex justify-center space-x-4">
+        <a href="#project1" class="glass p-6 text-center text-gray-800 w-40 hover:shadow-lg projects-button">Générateur d'horaires 📅</a>
+        <a href="#project2" class="glass p-6 text-center text-gray-800 w-40 hover:shadow-lg projects-button">Prévisions boursières 📈</a>
+        <a href="#project3" class="glass p-6 text-center text-gray-800 w-40 hover:shadow-lg projects-button">Thermostat intelligent ☀️</a>
+      </div>
+    </section>
+    <!-- Detailed Project Descriptions -->
+    <section id="project1" class="container mx-auto px-12 py-12 project-card">
+      <h3 class="text-2xl font-bold mb-4">
+        <a href="http://zicozico.pythonanywhere.com/">1. Générateur d'horaires pour l'UQAM 📅 🔗</a>
+      </h3>
+      <h6 class="text-m font-bold mb-4">
+        <a href="https://github.com/zaki-ay/schedules">Voir sur GitHub 🔗</a>
+      </h6>
+      <p>Ce projet est un site web qui utilise des techniques d'optimisation, notamment le backtracking, pour générer des horaires en fonction des cours entrés par l'utilisateur pour l'UQAM. Le site fournit toutes les combinaisons possibles d'horaires pour la liste de cours donnée. <br> Le projet est construit avec <strong>HTML/CSS/JS</strong> pour l'interface utilisateur et <strong>Python/Flask</strong> pour le backend. Les données sont stockées dans une <strong>base de données SQL</strong>, qui est mise à jour automatiquement grâce à des <strong>scrapers BeautifulSoup.</strong>
+      </p>
+      <img src="example_image_scheduler.png" alt="Planificateur de Cours UQAM" class="w-full md:w-1/2 mx-auto rounded-lg shadow-lg mb-6">
+      <h3 class="text-m font-bold mb-4">Fonctionnalités ⚙️ :</h3>
+      <ul class="mt-4">
+        <li>Génère toutes les combinaisons possibles d'emplois du temps;</li>
+        <li>Interface simple et intuitive pour entrer les cours;</li>
+        <li>Mises à jour automatiques des données via des scrapers;</li>
+        <li>Base de données SQL.</li>
+      </ul>
+    </section>
+    <section id="project2" class="container mx-auto px-12 py-12 project-card">
+      <h3 class="text-2xl font-bold mb-4">
+        <a href="http://zicocharts.pythonanywhere.com/">2. Plateforme de prédictions des marchés boursiers 📈 🔗</a>
+      </h3>
+      <h6 class="text-m font-bold mb-4">
+        <a href="https://github.com/zaki-ay/zicocharts">Voir sur GitHub 🔗</a>
+      </h6>
+      <p>Ce projet est une plateforme qui utilise des modèles de <strong>réseaux de neurones convolutifs (CNN)</strong> pour prédire le graphique du marché boursier du jour en cours. Les prédictions sont basées sur 13 ans de données historiques. <br> La plateforme est construite avec <strong>HTML/CSS/JS/Bootstrap</strong> pour l'interface utilisateur et <strong>Python/Flask</strong> pour le backend. <i>Notez que l'API yfinance expérience actuellement des limites d'utilisation.</i>
+      </p>
+      <img src="example_image_charts.png" alt="Plateforme de Prédiction du Marché Boursier" class="w-full md:w-1/2 mx-auto rounded-lg shadow-lg mb-6">
+      <h3 class="text-m font-bold mb-4">Fonctionnalités ⚙️ :</h3>
+      <ul class="mt-4">
+        <li>Prédit le graphique du marché boursier pour le jour en cours;</li>
+        <li>Utilise des modèles CNN entraînés sur 13 ans de données;</li>
+        <li>Interface simple pour visualiser les résultats de prédictions.</li>
+      </ul>
+    </section>
+    <section id="project3" class="container mx-auto px-12 py-12 project-card">
+      <h3 class="text-2xl font-bold mb-4">3. Contrôleur de Thermostat IoT ☀️</h3>
+      <h6 class="text-m font-bold mb-4">
+        <a href="https://github.com/zaki-ay/smart-heater">Voir sur GitHub 🔗</a>
+      </h6>
+      <p>Ce projet IoT est conçu pour automatiser le contrôle d'un thermostat mécanique à l'aide de plusieurs unités <strong>NodeMCU</strong>, de servomoteurs, et de capteurs de température et infrarouge. Le système permet de régler et maintenir une plage de température souhaitée via des <strong>requêtes HTTP</strong> gérées par un serveur central NodeMCU. <br> Le projet repose sur une base de code <strong>C++</strong>. Ce projet améliore l'efficacité énergétique tout en modernisant un thermostat existant. </p>
+      <img src="example_image_heater.png" alt="Contrôleur Thermostat IoT" class="w-full md:w-1/2 mx-auto rounded-lg shadow-lg mb-6">
+      <h3 class="text-m font-bold mb-4">Fonctionnalités ⚙️ :</h3>
+      <ul class="mt-4">
+        <li>Conception d'un système automatisé de contrôle de thermostat utilisant plusieurs unités NodeMCU pour optimiser la régulation de la température dans un appartement;</li>
+        <li>Intégration d'un capteur de température et d'un capteur infrarouge avec un servomoteur pour un contrôle précis d’un thermostat mécanique, améliorant l'efficacité énergétique;</li>
+        <li>Mise en place d'un serveur central NodeMCU pour gérer les requêtes HTTP des unités clientes, permettant un contrôle fluide et une fonction d’ajustement automatique pour la température souhaitée.</li>
+      </ul>
+    </section>
+  </body>
 </html>
