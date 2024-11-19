@@ -152,7 +152,7 @@ a {
 }
 
 .tech-logo {
-  width: 100px;
+  width: 110px;
   height: 130px;
   border-radius: 15px;
   overflow: hidden;
@@ -202,7 +202,6 @@ a {
     color: #34495e;
   }
 }
-
 
 /* Hover Animation */
 .tech-logo img {
