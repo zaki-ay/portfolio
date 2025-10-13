@@ -1,152 +1,791 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio - Zaki Yahia</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="styles.css" rel="stylesheet">
-    </head>
-   <body class="light-gradient text-gray-900 font-poppins">
-    <div class="absolute top-14 left-16 w-48 h-48 rounded-full overflow-hidden flex items-center justify-center hidden lg:flex">
-      <img src="images/memoji.png" alt="My Memoji" class="w-full h-full object-cover">
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zaki Yahia - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream: #f8f6f4;
+      --sage: #b8c5b0;
+      --dusty-rose: #d4a5a5;
+      --soft-blue: #a4b8d1;
+      --warm-grey: #9d9d9d;
+      --charcoal: #3a3a3a;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    .grain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      opacity: 0.03;
+      z-index: 1000;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      animation: grain 8s steps(10) infinite;
+    }
+
+    @keyframes grain {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      10% {
+        transform: translate(-5%, -10%);
+      }
+
+      30% {
+        transform: translate(3%, -15%);
+      }
+
+      50% {
+        transform: translate(12%, 9%);
+      }
+
+      70% {
+        transform: translate(9%, 4%);
+      }
+
+      90% {
+        transform: translate(-1%, 7%);
+      }
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      mix-blend-mode: difference;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: white;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      position: relative;
+      transition: opacity 0.3s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.6;
+    }
+
+    .hero-section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      text-align: center;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-size: clamp(4rem, 12vw, 10rem);
+      font-weight: 700;
+      line-height: 0.9;
+      margin-bottom: 2rem;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-title span {
+      display: block;
+      opacity: 0;
+      transform: translateY(100px);
+      animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-title span:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .hero-title span:nth-child(2) {
+      animation-delay: 0.2s;
+      color: var(--dusty-rose);
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--warm-grey);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards 0.6s;
+      will-change: opacity;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .scroll-indicator-container {
+      position: absolute;
+      bottom: 4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8rem;
+      color: var(--warm-grey);
+      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards 1s;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: var(--warm-grey);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+
+      0%,
+      100% {
+        transform: scaleY(1);
+        transform-origin: top;
+      }
+
+      50% {
+        transform: scaleY(0.5);
+        transform-origin: top;
+      }
+    }
+
+    .floating-images {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .floating-img {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--cream);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-img:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .floating-img:nth-child(2) {
+      top: 60%;
+      right: 15%;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+    }
+
+    section {
+      padding: 8rem 4rem;
+      position: relative;
+    }
+
+    .section-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--warm-grey);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      margin-bottom: 4rem;
+      letter-spacing: -0.03em;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-text {
+      font-size: 1.8rem;
+      line-height: 1.6;
+      color: var(--charcoal);
+      font-weight: 300;
+    }
+
+    .about-details {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .detail-item {
+      padding: 2rem;
+      background: white;
+      border-radius: 4px;
+      border-left: 4px solid var(--sage);
+      transition: all 0.3s;
+    }
+
+    .detail-item:hover {
+      transform: translateX(10px);
+      box-shadow: -10px 10px 0 var(--sage);
+    }
+
+    .detail-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--warm-grey);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .detail-value {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .detail-value a {
+      color: var(--charcoal);
+      text-decoration: none;
+      border-bottom: 2px solid var(--dusty-rose);
+      transition: border-color 0.3s;
+    }
+
+    .detail-value a:hover {
+      border-color: var(--charcoal);
+    }
+
+    .tech-section {
+      background: var(--charcoal);
+      color: var(--cream);
+      margin: 8rem 0;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0;
+    }
+
+    .tech-item {
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      border: 1px solid rgba(248, 246, 244, 0.1);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--sage);
+      transform: translateY(100%);
+      transition: transform 0.4s;
+      z-index: 0;
+    }
+
+    .tech-item:hover::before {
+      transform: translateY(0);
+    }
+
+    .tech-item img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      z-index: 1;
+      transition: all 0.3s;
+    }
+
+    .tech-item:hover img {
+      transform: scale(1.2);
+    }
+
+    .tech-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      z-index: 1;
+    }
+
+    .projects-section {
+      background: white;
+    }
+
+    .project-item {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      margin-bottom: 8rem;
+      align-items: center;
+    }
+
+    .project-item:nth-child(even) {
+      grid-template-columns: 1fr 1.2fr;
+    }
+
+    .project-item:nth-child(even) .project-image {
+      order: 2;
+    }
+
+    .project-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      aspect-ratio: 4/3;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .project-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .project-info {
+      padding: 2rem;
+    }
+
+    .project-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--warm-grey);
+      margin-bottom: 1rem;
+    }
+
+    .project-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .project-description {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--warm-grey);
+      margin-bottom: 2rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+      background: var(--cream);
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .project-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border: 2px solid var(--charcoal);
+      border-radius: 2px;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .project-link:hover {
+      background: var(--charcoal);
+      color: var(--cream);
+      transform: translate(4px, -4px);
+      box-shadow: -4px 4px 0 var(--dusty-rose);
+    }
+
+    .contact-section {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--sage);
+      color: var(--charcoal);
+    }
+
+    .contact-content {
+      text-align: center;
+      max-width: 800px;
+    }
+
+    .contact-title {
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .contact-email {
+      font-size: 1.5rem;
+      color: var(--charcoal);
+      text-decoration: none;
+      border-bottom: 3px solid var(--charcoal);
+      padding-bottom: 0.5rem;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .contact-email:hover {
+      border-color: transparent;
+      transform: translateY(-5px);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .social-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border: 2px solid var(--charcoal);
+      transition: all 0.3s;
+    }
+
+    .social-link:hover {
+      background: var(--charcoal);
+      color: var(--sage);
+    }
+
+    @media (max-width: 1024px) {
+
+      .about-layout,
+      .project-item,
+      .project-item:nth-child(even) {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .project-item:nth-child(even) .project-image {
+        order: 1;
+      }
+
+      .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+
+      section {
+        padding: 4rem 2rem;
+      }
+
+      nav {
+        padding: 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .about-text {
+        font-size: 1.3rem;
+      }
+
+      .social-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grain"></div>
+
+  <nav>
+    <div class="logo">Portfolio | Zaki Yahia</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="index.html">FR</a>
     </div>
-    <!-- Hero Section -->
-    <section class="text-center py-16 px-4">
-        <h1 class="text-5xl font-extrabold text-gray-800">My Portfolio</h1>
-        <h1 class="text-3xl font-extrabold text-gray-800">Zaki Yahia</h1>
-        <p class="text-lg text-gray-700 mt-4">A showcase of my skills, projects, and passions.</p>
-        <div class="mt-6 flex justify-center space-x-4">
-            <a href="Resume_Zaki_Yahia.pdf" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">View my CV</a>
-            <a href="https://github.com/zaki-ay/" target="_blank" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">GitHub</a>
-            <a href="https://www.linkedin.com/in/zaki-yahia/" target="_blank" class="glass bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">LinkedIn</a>
+  </nav>
+
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span>Zaki</span>
+        <span>Yahia</span>
+      </h1>
+      <p class="hero-subtitle">Cloud Engineer @ Sectra</p>
+    </div>
+    <div class="scroll-indicator-container">
+      <span>↓</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-number">001</div>
+    <h2 class="section-title">About</h2>
+    <div class="about-layout">
+      <div class="about-text">
+        I design and deploy scalable cloud infrastructures that turn complexity into automated, efficient solutions.
+        I build powerful, reusable scripts that let me deliver fast, at scale, without compromising on quality.
+      </div>
+      <div class="about-details">
+        <div class="detail-item">
+          <div class="detail-label">Current role</div>
+          <div class="detail-value">Cloud Engineer — Sectra</div>
         </div>
-        <div class="fixed top-4 right-4">
-            <a href="index.html">
-                <button id="language-toggle" class="glass px-4 py-2 rounded-full">
-                        <strong>Français</strong> 🇫🇷 
-                </button>
-            </a>
+        <div class="detail-item">
+          <div class="detail-label">Education</div>
+          <div class="detail-value">Bachelor’s in Computer Science and Software Engineering — UQAM</div>
         </div>
-    </section>
-    <section class="container mx-auto px-16 py-2">
-      <h2 class="text-3xl font-extrabold text-gray-800 text-center mb-8">About me</h2>
-      <p class="glass p-6 text-gray-800 hover:shadow-lg projects-button"> Hey, I’m Zaki —   a computer science grad from UQAM who loves bringing creative tech ideas to life. Whether it’s coding smart systems with C++ and Python or tinkering with Arduino projects, I’m all about making tech that works and wows. Big on cybersecurity, machine learning, and solving cool challenges, I’m always looking for the next fun project!</p>
-    </section>
-    <section class="container mx-auto my-12 px-4 py-2">
-      <div class="tech-section">
-        <h2 class="text-3xl font-extrabold text-gray-800">My technologies</h2>
-        <div class="flex justify-center space-x-4">
-          <div class="tech-logos">
-            <div class="tech-logo">
-              <img src="images/python.png" alt="Python Logo">
-              <div class="tech-name">Python</div>
-            </div>
-            <div class="tech-logo">
-              <img src="images/cpp.png" alt="C++ Logo">
-              <div class="tech-name">C++</div>
-            </div>
-            <div class="tech-logo">
-              <img src="images/csharp.png" alt="C# Logo">
-              <div class="tech-name">C#</div>
-            </div>
-            <div class="tech-logo">
-              <img src="images/java.png" alt="Java Logo">
-              <div class="tech-name">Java</div>
-            </div>
-            <div class="tech-logo">
-              <img src="images/js.png" alt="Javascript Logo">
-              <div class="tech-name">JavaScript</div>
-            </div>
-            <div class="tech-logo">
-              <img src="images/bash.png" alt="Bash Logo">
-              <div class="tech-name">Bash</div>
-            </div>
-            <div class="tech-logo">
-              <img src="images/git.png" alt="Git Logo">
-              <div class="tech-name">Git</div>
-            </div>
+        <div class="detail-item">
+          <div class="detail-label">Certifications</div>
+          <div class="detail-value">Microsoft Azure Fundamentals (AZ-900)</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Expertise</div>
+          <div class="detail-value">Cloud Architecture • Automation • Programming • Cybersecurity</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Links</div>
+          <div class="detail-value">
+            <a href="https://github.com/zaki-ay/" target="_blank">GitHub</a> •
+            <a href="https://www.linkedin.com/in/zaki-yahia/" target="_blank">LinkedIn</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Project Links -->
-    <section class="container mx-auto px-8 py-8">
-        <h2 class="text-3xl font-extrabold text-center mb-8">My personal projects</h2>
-        <div class="flex justify-center space-x-4">
-            <a href="#project1" class="glass p-6 text-center text-gray-800 w-40 hover:shadow-lg projects-button">Schedule Generator 📅</a>
-            <a href="#project2" class="glass p-6 text-center text-gray-800 w-40 hover:shadow-lg projects-button">Stock Market Predictions 📈</a>
-            <a href="#project3" class="glass p-6 text-center text-gray-800 w-40 hover:shadow-lg projects-button">Smart Thermostat ☀️</a>
+  <section class="tech-section">
+    <div class="section-number" style="color: var(--cream);">002</div>
+    <h2 class="section-title" style="color: var(--cream);">Technologies</h2>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <img src="images/azure.png" alt="Azure">
+        <div class="tech-name">Azure</div>
+      </div>
+      <div class="tech-item">
+        <img src="images/ps7.png" alt="PowerShell">
+        <div class="tech-name">PowerShell</div>
+      </div>
+      <div class="tech-item">
+        <img src="images/python.png" alt="Python">
+        <div class="tech-name">Python</div>
+      </div>
+      <div class="tech-item">
+        <img src="images/java.png" alt="Java">
+        <div class="tech-name">Java</div>
+      </div>
+      <div class="tech-item">
+        <img src="images/csharp.png" alt="C#">
+        <div class="tech-name">C#</div>
+      </div>
+      <div class="tech-item">
+        <img src="images/docker.png" alt="Docker">
+        <div class="tech-name">Docker</div>
+      </div>
+      <div class="tech-item">
+        <img src="images/git.png" alt="Git">
+        <div class="tech-name">Git</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="projects-section">
+    <div class="section-number">003</div>
+    <h2 class="section-title">Selected Projects</h2>
+
+    <div class="project-item">
+      <div class="project-image">
+        <img src="images/example_image_scheduler.png" alt="Schedule Generator">
+      </div>
+      <div class="project-info">
+        <div class="project-number">001</div>
+        <h3 class="project-title">UQAM Schedule Generator</h3>
+        <p class="project-description">
+          Full-stack web application using advanced optimization algorithms to automatically generate all possible class
+          schedules. Robust backend architecture with automated data updates via web scraping.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">SQL</span>
+          <span class="tag">BeautifulSoup</span>
         </div>
-    </section>
-    <!-- Detailed Project Descriptions -->
-    <section id="project1" class="container mx-auto px-12 py-12 project-card">
-        <h3 class="text-2xl font-bold mb-4">
-            <a href="http://zicozico.pythonanywhere.com/">1. UQAM Schedule Generator 📅 🔗</a>
-        </h3>
-        <h6 class="text-m font-bold mb-4">
-            <a href="https://github.com/zaki-ay/schedules">View on GitHub 🔗</a>
-        </h6>
-        <p>This project is a website that uses optimization techniques, particularly backtracking, to generate schedules based on the courses entered by the user for UQAM. The site provides all possible schedule combinations for the given course list. <br>
-        The project is built with <strong>HTML/CSS/JS</strong> for the front-end and <strong>Python/Flask</strong> for the backend. The data is stored in an <strong>SQL database</strong>, which is automatically updated using <strong>BeautifulSoup scrapers.</strong>
-        </p>
-        <img src="images/example_image_scheduler.png" alt="UQAM Schedule Planner" class="w-full md:w-1/2 mx-auto rounded-lg shadow-lg mb-6">
-        <h3 class="text-m font-bold mb-4">Features ⚙️ :</h3>
-        <ul class="mt-4">
-            <li>Generates all possible schedule combinations;</li>
-            <li>Simple and intuitive interface for entering courses;</li>
-            <li>Automatic data updates through scrapers;</li>
-            <li>SQL database.</li>
-        </ul>
-    </section>
-    <section id="project2" class="container mx-auto px-12 py-12 project-card">
-        <h3 class="text-2xl font-bold mb-4">
-            <a href="http://zicocharts.pythonanywhere.com/">2. Stock Market Prediction Platform 📈 🔗</a>
-        </h3>
-        <h6 class="text-m font-bold mb-4">
-            <a href="https://github.com/zaki-ay/zicocharts">View on GitHub 🔗</a>
-        </h6>
-        <p>This project is a platform that uses <strong>convolutional neural network (CNN) models</strong> to predict the stock market chart for the current day. The predictions are based on 13 years of historical data. <br>
-        The platform is built with <strong>HTML/CSS/JS/Bootstrap</strong> for the front-end and <strong>Python/Flask</strong> for the backend. <i>Note that the yfinance API is currently experiencing usage limits.</i>
-        </p>
-        <img src="images/example_image_charts.png" alt="Stock Market Prediction Platform" class="w-full md:w-1/2 mx-auto rounded-lg shadow-lg mb-6">
-        <h3 class="text-m font-bold mb-4">Features ⚙️ :</h3>
-        <ul class="mt-4">
-            <li>Predicts the stock market chart for the current day;</li>
-            <li>Uses CNN models trained on 13 years of data;</li>
-            <li>Simple interface to visualize prediction results.</li>
-        </ul>
-    </section>
-    <section id="project3" class="container mx-auto px-12 py-12 project-card">
-        <h3 class="text-2xl font-bold mb-4">3. IoT Thermostat Controller ☀️</h3>
-        <h6 class="text-m font-bold mb-4">
-            <a href="https://github.com/zaki-ay/smart-heater">View on GitHub 🔗</a>
-        </h6>
-        <p>This IoT project is designed to automate the control of a mechanical thermostat using multiple <strong>NodeMCU</strong> units, servo motors, and temperature and infrared sensors. The system allows for setting and maintaining a desired temperature range via <strong>HTTP requests</strong> managed by a central NodeMCU server. <br>
-        The project is based on <strong>C++</strong> code. This project enhances energy efficiency while modernizing an existing thermostat.</p>
-        <img src="images/example_image_heater.png" alt="IoT Thermostat Controller" class="w-full md:w-1/2 mx-auto rounded-lg shadow-lg mb-6">
-        <h3 class="text-m font-bold mb-4">Features ⚙️ :</h3>
-        <ul class="mt-4">
-            <li>Design of an automated thermostat control system using multiple NodeMCU units to optimize temperature regulation in an apartment;</li>
-            <li>Integration of a temperature sensor and infrared sensor with a servo motor for precise control of a mechanical thermostat, improving energy efficiency;</li>
-            <li>Setup of a central NodeMCU server to handle HTTP requests from client units, allowing smooth control and automatic adjustment for the desired temperature.</li>
-        </ul>
-    </section>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-05G83S4Y92"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+        <div class="project-links">
+          <a href="http://zicozico.pythonanywhere.com/" class="project-link" target="_blank">View site</a>
+          <a href="https://github.com/zaki-ay/schedules" class="project-link" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-05G83S4Y92');
-    </script>
+    <div class="project-item">
+      <div class="project-image">
+        <img src="images/example_image_charts.png" alt="Stock Predictions">
+      </div>
+      <div class="project-info">
+        <div class="project-number">002</div>
+        <h3 class="project-title">AI Stock Predictions</h3>
+        <p class="project-description">
+          Machine learning platform using convolutional neural networks trained on 13 years of historical data to
+          predict market trends in real time.
+        </p>
+        <div class="project-tags">
+          <span class="tag">CNN</span>
+          <span class="tag">Python</span>
+          <span class="tag">TensorFlow</span>
+          <span class="tag">Flask</span>
+        </div>
+        <div class="project-links">
+          <a href="http://zicocharts.pythonanywhere.com/" class="project-link" target="_blank">View site</a>
+          <a href="https://github.com/zaki-ay/zicocharts" class="project-link" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-image">
+        <img src="images/example_image_heater.png" alt="IoT Thermostat">
+      </div>
+      <div class="project-info">
+        <div class="project-number">003</div>
+        <h3 class="project-title">Smart IoT Thermostat</h3>
+        <p class="project-description">
+          Distributed IoT infrastructure combining multiple NodeMCU microcontrollers, servomotors, and sensors to
+          intelligently automate temperature control over HTTP. Client-server architecture with automatic adjustments.
+        </p>
+        <div class="project-tags">
+          <span class="tag">C++</span>
+          <span class="tag">NodeMCU</span>
+          <span class="tag">IoT</span>
+          <span class="tag">HTTP</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/zaki-ay/smart-heater" class="project-link" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="contact-content">
+      <h2 class="contact-title">Let’s work together</h2>
+      <div class="social-links">
+        <a href="https://github.com/zaki-ay/" class="social-link" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/zaki-yahia/" class="social-link" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
 </body>
+
 </html>
