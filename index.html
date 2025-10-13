@@ -18,7 +18,7 @@
     }
 
     :root {
-      --cream: #f8f6f4;
+      --cream: #f2f0ee;
       --sage: #b8c5b0;
       --dusty-rose: #d4a5a5;
       --soft-blue: #a4b8d1;
@@ -107,8 +107,25 @@
       transition: opacity 0.3s;
     }
 
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: white;
+      transition: width 0.3s ease, left 0.3s ease;
+      transform: translateX(-50%);
+    }
+
     .nav-links a:hover {
-      opacity: 0.6;
+      opacity: 1;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+      left: 50%;
     }
 
     .hero-section {
@@ -413,19 +430,29 @@
     .project-image {
       position: relative;
       overflow: hidden;
-      border-radius: 4px;
+      border-radius: 8px;
       aspect-ratio: 4/3;
     }
 
     .project-image img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      background: var(--cream);
+    }
+
+    .project-image:hover {
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+      transform: translateY(-3px);
     }
 
     .project-image:hover img {
-      transform: scale(1.05);
+      transform: scale(1.00);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
     }
 
     .project-info {
